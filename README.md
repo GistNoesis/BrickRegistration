@@ -35,6 +35,7 @@ Once you have generated a few renderings you can run :
 
 It will create a neural network, train it, and run it and do some clustering to identify the bricks.
 It is intended as a boiler plate to experiment with object recognition to get you started :)
+Only a mock network, on a mock dataset have currently been run so some bugs are probably hiding.
 
 More information is available inside the source files. Look at them.
 
