@@ -46,4 +46,14 @@ This is a week-end project trying to replicate a technology ( https://news.ycomb
 Dependencies : 
 pybullet tensorflow2 scipy object2urdf hdbscan 
 
+Usage
 
+```
+git clone https://github.com/GistNoesis/BrickRegistration
+cd BrickRegistration
+python3 -m virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+NOTE: use [tensorflow_macos](https://github.com/apple/tensorflow_macos) if on M1 hardware.
