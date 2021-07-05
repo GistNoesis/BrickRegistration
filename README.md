@@ -41,3 +41,8 @@ More information is available inside the source files. Look at them.
 If you have an iphone you can try similar technology from https://brickit.app/ 
 
 This is a week-end project trying to replicate a technology ( https://news.ycombinator.com/item?id=27693560 )
+
+Dependencies : 
+pybullet tensorflow2 scipy object2urdf hdbscan 
+
+
