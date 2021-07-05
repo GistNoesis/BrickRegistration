@@ -1,6 +1,6 @@
 # BrickRegistration
 
-![Screenshot](https://raw.githubusercontent.com/GistNoesis/BrickRegistration/main/DemoRenderings/Scene0-view0.png)]
+![Screenshot](https://raw.githubusercontent.com/GistNoesis/BrickRegistration/main/DemoRenderings/Scene0-view0.png)
 
 This project is a tool to generate synthetic 3d scenes for toying with bricks registration.
 
