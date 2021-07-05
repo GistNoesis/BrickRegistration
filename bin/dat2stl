@@ -1,0 +1,64 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+use LDraw::Parser;
+use Getopt::Long;
+
+my $opts = {};
+GetOptions(
+    $opts,
+    'help',
+    'scale=s',
+    'ldrawdir=s',
+    'file=s',
+    'debug',
+);
+
+if ( $opts->{help} ) {
+    print_usage();
+    exit 0;
+}
+
+if ( !$opts->{file} ) {
+    print "ERROR: --file is required! (try --help)\n";
+    exit 1;
+}
+
+sub print_usage {
+    print <<END;
+Usage: $0 --file <input file> [--scale=<N> --ldrawdir=/usr/share/ldraw]
+
+Takes an ldraw part .dat file as input and converts it into an STL file.
+
+    --file <string>
+        The full path to the input .dat part file. Regardless of where this file
+        is, sub-parts of the file will be searched in --ldrawdir.
+
+    --scale <int>
+        Also scale the STL by N. This is separate from the LDU scaling that is
+        used to convert internally from LDU (LDraw Unit) to mm (STL).
+
+    --ldrawdir <string>
+        The location of the ldraw parts library package. Note: it is expected
+        that this contains the directories "p", "parts" and "models". The Debian
+        non-free package "ldraw-parts" installs to /usr/share/ldraw and that is
+        the default value for this tool.
+
+    --debug
+        Print debugging messages to STDERR
+
+END
+}
+
+my $parser = LDraw::Parser->new( {
+    file => $opts->{file},
+    $opts->{scale} ? ( scale => $opts->{scale} ) : (),
+    $opts->{ldrawdir} ? ( ldraw_path => $opts->{ldrawdir} ) : (),
+    $opts->{debug} ? ( debug => 1 ) : (),
+} );
+
+$parser->parse;
+print $parser->to_stl;
