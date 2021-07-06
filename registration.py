@@ -67,7 +67,9 @@ class TableDistance(layers.Layer):
 
     def call(self, input):
         #This can be optimized
-        out = tf.abs(self.distanceScale)* tf.reduce_sum( tf.square(self.table - tf.expand_dims( input,axis=-1)),axis=-2)
+        #adding a minus sign here so that when the value for closer points is greater than the value for farther points
+        #so that the output can be used directly as logits
+        out = - tf.abs(self.distanceScale)* tf.reduce_sum( tf.square(self.table - tf.expand_dims( input,axis=-1)),axis=-2)
         return out
 
     def compute_output_shape(self, input_shape):
