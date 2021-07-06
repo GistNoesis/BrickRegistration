@@ -44,6 +44,7 @@ If you have an iphone you can try similar technology from https://brickit.app/
 This is a week-end project trying to replicate a technology ( https://news.ycombinator.com/item?id=27693560 )
 
 Dependencies (pick the ones you need depending on what you want to run): 
+
 pybullet tensorflow2 scipy object2urdf hdbscan 
 
 
