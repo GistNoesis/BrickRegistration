@@ -19,7 +19,7 @@ These two commands take ~30min and 6hours to run.
 The generateURDF use GPU and crash on some files if there is not enough memory (GTX 1080 Ti is OK)
 
 It successfully generates ~14000 urdf files provided that your machine is beefy enough.
-I have create a compressed 1.4GB legoSTLandURDF.tar.gz archive with them https://easyupload.io/bzirxo (This link will expire in 30 days) (I'll try to add a torrent link soon)
+I have create a compressed 1.4GB legoSTLandURDF.tar.gz archive with them http://orchid.gistnoesis.net/legoSTLandURDF.tar.gz
 
 You can download it here and extract it in the repository instead of having to run the above commands
 
